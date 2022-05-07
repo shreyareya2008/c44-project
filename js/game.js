@@ -74,7 +74,7 @@ class Game{
                 
                 if(player.score>=5){
                     player.rank += 1;
-                   updatePlayerAtEnd(player.rank);
+                //updatePlayerAtEnd(player.rank);
 
           database.ref('playerAtEnd').on("value",(data)=>{
                     this.rank = data.val()
