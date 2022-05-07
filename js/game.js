@@ -72,19 +72,15 @@ class Game{
                  
                  }
                 
-                if(player.score>=5){
+                 if(player.score>=5){
                     player.rank += 1;
-                //updatePlayerAtEnd(player.rank);
-
-          database.ref('playerAtEnd').on("value",(data)=>{
-                    this.rank = data.val()
-                })         
+                    Player.updatePlayerAtEnd(player.rank);
                     player.update();
                     this.showRank();
-                    gameState = 2; 
+                 gameState = 2; 
 
                 }
-                 
+                                
 
                 if (keyIsDown(RIGHT_ARROW) && player.index !== null) {
                     player.distance -= 10
